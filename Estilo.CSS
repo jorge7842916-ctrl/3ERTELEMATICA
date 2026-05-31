@@ -1,0 +1,36 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:sans-serif;
+    width:100vw;
+}
+nav{
+    background:#2c3e50;
+    color:blueviolet
+    padding:2rem;
+    text-align:center;
+    width:100%;
+}
+.grid-municipios{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250py,1fr));
+gap:10px
+width:100%;
+padding:10px;
+}
+.tarjeta{
+    background:#3198db;
+    color:write;
+    text-decoration:none;
+    padding:40px;
+    text-align:center;
+    display:blok;
+    font-size:1.5rem;
+    transition:background 0.3;
+}
+.tarjeta:hover{
+    background:#268069;
+}

@@ -1,0 +1,43 @@
+estilo.css
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    width: 100vw;
+}
+
+nav {
+    background: #2c3e50;
+    color: rgb(55, 113, 142);
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.grid-estados {
+    display: grid;
+    /* Ajustado para que las columnas sean responsivas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.tarjeta {
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 40px;
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;
+    transition: background 0.3s;
+}
+
+.tarjeta:hover {
+    background: #2980b9;
+}

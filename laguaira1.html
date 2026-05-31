@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado La Guaira - Orgullo y Tradición de Venezuela</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* ==========================================================================
+           ESTILOS CSS (Diseño de la página)
+           ========================================================================== */
+        
+        /* Configuración General y Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            background-color: #f8fafc;
+            color: #334155;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #0f172a;
+        }
+
+        /* Barra de Navegación */
+        header {
+            background-color: #003366;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .logo i {
+            color: #ffcc00;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Banner Principal (Hero Section) */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 51, 102, 0.6), rgba(15, 23, 42, 0.8)), 
+                        url('http://googleusercontent.com/image_collection/image_retrieval/1221170766697253883') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            color: #f1f5f9;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Secciones de Contenido */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: #003366;
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #ffcc00;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Bloques de Dos Columnas (Texto e Imagen) */
+        .row {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .col-text {
+            flex: 1;
+        }
+
+        .col-text h3 {
+            font-size: 26px;
+            color: #0f172a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .col-text h3 i {
+            color: #003366;
+        }
+
+        .col-text p {
+            font-size: 18px;
+            color: #475569;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .col-text ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .col-text ul li {
+            font-size: 18px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .col-text ul li i {
+            color: #ffcc00;
+        }
+
+        .col-img {
+            flex: 1;
+        }
+
+        .image-card {
+            width: 100%;
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Ajuste específico para mapas o banderas con fondo claro */
+        .image-card.contain img {
+            object-fit: contain;
+            background-color: #f1f5f9;
+            padding: 20px;
+        }
+
+        /* Fondo de Color para Variar Secciones */
+        .bg-alt {
+            background-color: #f1f5f9;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* Tarjetas de Cultura (Grid Layout) */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-bottom: 5px solid #003366;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card .icon-wrapper {
+            font-size: 45px;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .card h4 {
+            font-size: 22px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        /* Tabla de Gastronomía */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            text-align: left;
+        }
+
+        th {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+        }
+
+        td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 17px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Mitos y Leyendas (Bloques Destacados) */
+        .legend-box {
+            background-color: #ffffff;
+            border-left: 6px solid #ffcc00;
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .legend-box h4 {
+            font-size: 22px;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        /* Pie de Página */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 16px;
+            border-top: 4px solid #ffcc00;
+        }
+
+        footer p strong {
+            color: #ffffff;
+        }
+
+        /* Diseño Responsivo para Pantallas de Celular */
+        @media (max-width: 968px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            .hero-content h1 {
+                font-size: 38px;
+            }
+            .hero-content p {
+                font-size: 18px;
+            }
+            .row {
+                flex-direction: column !important;
+                gap: 30px;
+            }
+            .image-card {
+                height: 280px;
+            }
+            .container {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-anchor"></i> Estado La Guaira
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#economia">Economía</a></li>
+                <li><a href="#cultura">Cultura</a></li>
+                <li><a href="#gastronomia">Gastronomía</a></li>
+                <li><a href="#leyendas">Mitos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Estado La Guaira</h1>
+            <p>Tierra de historia, tambor y mar Caribe. La verdadera puerta de entrada a Venezuela.</p>
+        </div>
+    </section>
+
+    <section id="historia" class="container">
+        <h2 class="section-title">Historia y Fundación</h2>
+        <div class="row">
+            <div class="col-text">
+                <h3><i class="fa-solid fa-landmark"></i> Orígenes y Fundación (1589)</h3>
+                <p>El Estado La Guaira posee un legado histórico invaluable. Fue fundada originalmente el <strong>29 de junio de 1589</strong> por el gobernador Diego de Osorio bajo el nombre de <em>San Pedro de La Guaira</em>. Desde sus inicios, se consolidó como el puerto defensivo y comercial más relevante para la capital, Caracas, resguardado por imponentes fortificaciones coloniales contra los ataques piratas.</p>
+                
+                <h3><i class="fa-solid fa-arrows-rotate"></i> El Renacer de su Identidad (2019)</h3>
+                <p>Durante décadas la región fue conocida políticamente como el "Estado Vargas". Sin embargo, buscando rescatar las raíces aborígenes y la identidad histórica de sus pobladores, el <strong>14 de junio de 2019</strong> se aprobó de manera oficial el cambio de nombre a <strong>Estado La Guaira</strong>, rindiendo tributo al nombre indígena original de la zona: <em>Huaira</em>.</p>
+            </div>
+            <div class="col-img">
+                <div class="image-card">
+                    <img src=ima3.jpeg alt="Casco Histórico de La Guaira">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ubicacion" class="bg-alt">
+        <div class="container">
+            <h2 class="section-title">Ubicación y Límites</h2>
+            <div class="row reverse">
+                <div class="col-text">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> ¿Dónde se ubica?</h3>
+                    <p>La Guaira se sitúa en la región centro-norte de Venezuela, extendiéndose como una impresionante e imponente franja costera flanqueada por la majestuosa Cordillera de la Costa y el Mar Caribe.</p>
+                    <p><strong>Sus límites geográficos exactos son:</strong></p>
+                    <ul>
+                        <li><i class="fa-solid fa-compass"></i> <strong>Norte:</strong> El Mar Caribe (Fachada marítima fundamental).</li>
+                        <li><i class="fa-solid fa-compass"></i> <strong>Sur:</strong> El Distrito Capital (Caracas).</li>
+                        <li><i class="fa-solid fa-compass"></i> <strong>Este:</strong> El Estado Miranda.</li>
+                        <li><i class="fa-solid fa-compass"></i> <strong>Oeste:</strong> El Estado Aragua.</li>
+                    </ul>
+                </div>
+                <div class="col-img">
+                    <div class="image-card contain">
+                        <img src=ima4.jpeg alt="Ubicación de La Guaira">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="economia" class="container">
+        <h2 class="section-title">Infraestructura y Conectividad</h2>
+        <div class="row">
+            <div class="col-text">
+                <h3><i class="fa-solid fa-plane-departure"></i> El Corazón del Transporte Nacional</h3>
+                <p>El Estado La Guaira no solo destaca por sus atractivos naturales, sino por albergar la infraestructura de transporte y conectividad comercial más importante de toda Venezuela.</p>
+                <p>El <strong>Aeropuerto Internacional de Maiquetía "Simón Bolívar"</strong> es el principal centro de conexiones aéreas del país, uniendo a Venezuela con el resto del mundo. A su vez, el <strong>Puerto de La Guaira</strong> lidera el intercambio comercial marítimo y la recepción de bienes esenciales.</p>
+                <p>Toda esta actividad se conecta directamente con el centro del país a través de la gran Autopista Caracas-La Guaira, una obra de ingeniería imponente que atraviesa los cerros mediante viaductos vanguardistas.</p>
+            </div>
+            <div class="col-img">
+                <div class="image-card">
+                    <img src=ima1.jpeg  alt="Infraestructura de Transporte">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cultura" class="bg-alt">
+        <div class="container">
+            <h2 class="section-title">Cultura y Tradiciones</h2>
+            <p style="text-align: center; max-width: 800px; margin: -20px auto 40px auto; font-size: 18px;">El folklore guaireño es rico, alegre y profundamente influenciado por las herencias afrodescendientes e hispanas que se sienten en cada repique de tambor.</p>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-masks-theater"></i></div>
+                    <h4>Diablos Danzantes de Naiguatá</h4>
+                    <p>Una de las festividades religiosas y culturales más coloridas del continente, declarada Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO. Se celebra en Corpus Christi rindiendo culto a Dios mediante trajes pintados a mano y llamativas máscaras de animales marinos.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-drum"></i></div>
+                    <h4>Fiesta de San Juan Bautista</h4>
+                    <p>Cada 24 de junio las costas guaireñas se visten de rojo y blanco. El sonido inconfundible de los tambores de cumaco y mantas rinde homenaje al santo en una fiesta llena de devoción, baile y tradición africana.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-shuttle-space"></i></div>
+                    <h4>Carnavales Turísticos</h4>
+                    <p>Reconocidos a nivel nacional, los carnavales en La Guaira llenan la avenida Soublette de música, comparsas, espectaculares carrozas diseñadas por las comunidades y la tradicional elección de la reina.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gastronomia" class="container">
+        <h2 class="section-title">Gastronomía Típica</h2>
+        <div class="row">
+            <div class="col-text">
+                <h3><i class="fa-solid fa-utensils"></i> Sabores del Mar Caribe</h3>
+                <p>La propuesta culinaria de La Guaira gira en torno a la frescura de la pesca del día. Comer a la orilla de la playa es una experiencia obligatoria para locales y turistas.</p>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Categoría</th>
+                                <th>Platos y Especialidades</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Platos Fuertes</strong></td>
+                                <td>Pescado frito (pargo o carite) servido con tostones, ensalada rayada y arroz; hervidos de pescado fresco; empanadas de cazón y ceviche costero.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dulcería Tradicional</strong></td>
+                                <td>El emblemático Bienmesabe, conservas de coco, dulce de lechoza (papaya) y las famosas polvorosas.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Bebidas Región</strong></td>
+                                <td>La refrescante Cocada (batido de coco natural, leche y canela), jugos de frutas tropicales como el mango, la pasión y el limón con papelón.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-img">
+                <div class="image-card">
+                    <img src=ima2.jpeg alt="Gastronomía de La Guaira">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leyendas" class="bg-alt">
+        <div class="container">
+            <h2 class="section-title">Mitos y Leyendas</h2>
+            <p style="text-align: center; max-width: 800px; margin: -20px auto 40px auto; font-size: 18px;">Como toda tierra colonial y portuaria, La Guaira resguarda historias misteriosas que han pasado de generación en generación.</p>
+            
+            <div class="legend-box">
+                <h4><i class="fa-solid fa-ghost"></i> El Hombre de la Sombra</h4>
+                <p>Los lugareños del casco colonial cuentan que, durante las noches más cerradas y con neblina marina, una misteriosa silueta alta y con sombrero camina de forma silenciosa por los callejones empedrados empinados, desapareciendo al doblar las esquinas de las viejas casonas.</p>
+            </div>
+
+            <div class="legend-box">
+                <h4><i class="fa-solid fa-dungeon"></i> Los Fantasmas de los Fortines</h4>
+                <p>En las estructuras del <em>Fortín El Vigía</em> y el <em>Castillo de San Carlos</em>, se tejen leyendas sobre lamentos y ruidos de cadenas que se escuchan en la madrugada. Se dice que pertenecen a los antiguos centinelas españoles y a los prisioneros políticos que pagaron condenas en las oscuras bóvedas durante la época de la independencia.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Estado La Guaira</strong> - Belleza Costera, Historia Viva y Desarrollo de Venezuela.</p>
+        <p style="margin-top: 10px; font-size: 14px; color: #64748b;">&copy; 2026 Plataforma Informativa Regional. Diseñado con HTML y CSS Profesional.</p>
+    </footer>
+
+</body>
+</html>

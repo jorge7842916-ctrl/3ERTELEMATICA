@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Esparta - Presentación Escolar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#fcfbfe',      /* Fondo claro, limpio y moderno */
+                            card: '#ffffff',       /* Tarjetas de fondo blanco puro */
+                            textDark: '#120f2b',   /* Texto oscuro de alta legibilidad */
+                            purple: '#7c3aed',     /* Púrpura de acento moderno */
+                            softPurple: '#eef2ff', /* Fondo lavanda muy suave */
+                            accent: '#f43f5e'      /* Rosa coral para destacar elementos clave */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-card {
+            box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.08);
+        }
+        .clean-border {
+            border: 1px solid rgba(124, 58, 237, 0.12);
+        }
+        /* Personalización de barra de desplazamiento */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fcfbfe;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ddd6fe;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c084fc;
+        }
+        /* Clase para el enlace activo en el menú */
+        .nav-active {
+            color: #7c3aed !important;
+            border-bottom: 2px solid #7c3aed;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-textDark font-sans min-h-screen overflow-x-hidden selection:bg-brand-softPurple selection:text-brand-purple">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-purple-100 px-4 py-3 md:px-8 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="p-2 bg-gradient-to-tr from-brand-purple to-brand-accent rounded-lg text-white">
+                    <i data-lucide="compass" class="w-5 h-5"></i>
+                </div>
+                <div class="text-left">
+                    <span class="block font-bold text-base md:text-lg text-brand-textDark">Nueva Esparta</span>
+                    <span class="block text-[10px] text-gray-500 font-medium">Exposición Académica</span>
+                </div>
+            </a>
+            
+            <!-- Selectores de navegación superiores con enlaces funcionales -->
+            <nav id="navbar" class="flex items-center space-x-4 md:space-x-8 text-xs md:text-sm font-bold">
+                <a href="#inicio" class="nav-link py-1 text-gray-600 hover:text-brand-purple transition-colors">Inicio</a>
+                <a href="#limites" class="nav-link py-1 text-gray-600 hover:text-brand-purple transition-colors">1. Límites</a>
+                <a href="#turismo" class="nav-link py-1 text-gray-600 hover:text-brand-purple transition-colors">2. Turismo</a>
+                <a href="#gastronomia" class="nav-link py-1 text-gray-600 hover:text-brand-purple transition-colors">3. Gastronomía</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN WRAPPER -->
+    <main class="pt-20">
+
+        <!-- ================= HERO / INTRODUCCIÓN ================= -->
+        <section id="inicio" class="scroll-mt-24 min-h-[85vh] flex flex-col justify-center items-center px-4 relative overflow-hidden py-12">
+            <!-- Suaves círculos decorativos en el fondo -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-purple-100/60 rounded-full blur-[80px] pointer-events-none"></div>
+            
+            <div class="max-w-5xl text-center z-10 w-full">
+                <div class="inline-flex items-center space-x-2 bg-brand-softPurple border border-brand-purple/20 px-3 py-1.5 rounded-full mb-6">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-purple">Único Estado Insular de Venezuela</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-7xl font-bold tracking-tight mb-6">
+                    <span class="text-gray-500 text-xl md:text-3xl block font-sans font-light mb-1">Presentación del Estado</span>
+                    <span class="bg-gradient-to-r from-brand-purple via-indigo-600 to-brand-accent bg-clip-text text-transparent">Nueva Esparta</span>
+                </h1>
+                
+                <!-- Main Intro Card con Imagen Real -->
+                <div class="bg-white border border-purple-100 rounded-3xl max-w-4xl mx-auto mb-10 overflow-hidden shadow-sm glow-card grid grid-cols-1 md:grid-cols-12 gap-0">
+                    <div class="md:col-span-5 relative h-52 md:h-auto min-h-[240px] bg-purple-100">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" 
+                             alt="" 
+                             class="absolute inset-0 w-full h-full object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="hidden absolute inset-0 bg-gradient-to-tr from-brand-purple to-pink-500 items-center justify-center text-white p-4">
+                            <i data-lucide="palmtree" class="w-12 h-12"></i>
+                        </div>
+                    </div>
+                    <!-- Texto Literal de la Imagen 1 -->
+                    <div class="md:col-span-7 p-6 md:p-8 flex flex-col justify-center text-left">
+                        <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+                            El estado <strong class="text-brand-purple font-semibold">Nueva Esparta</strong> es el único estado insular de Venezuela y uno de sus destinos más emblemáticos. Está compuesto por tres islas principales del mar Caribe: la <strong class="text-brand-accent font-semibold">Isla de Margarita</strong>, la <strong class="text-brand-accent font-semibold">Isla de Coche</strong> y la <strong class="text-brand-accent font-semibold">Isla de Cubagua</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tres Islas Grid -->
+                <h3 class="text-sm font-extrabold text-brand-purple mb-6 uppercase tracking-wider">Las Tres Islas Principales</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+                    <!-- Margarita Card -->
+                    <div class="bg-white border border-purple-100 rounded-2xl shadow-sm hover:border-brand-purple/40 transition-all overflow-hidden flex flex-col">
+                        <div class="h-40 bg-purple-50 relative">
+                            <img src="https://images.unsplash.com/photo-1548625361-155deee26291?auto=format&fit=crop&w=500&q=80" 
+                                 alt="" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                <i data-lucide="palmtree" class="w-8 h-8"></i>
+                            </div>
+                        </div>
+                        <div class="p-4 text-left">
+                            <h4 class="font-bold text-brand-textDark text-sm">Isla de Margarita</h4>
+                            <p class="text-xs text-gray-500 mt-1">La más grande y poblada. Combina hermosas playas, imponentes castillos históricos y centros comerciales libres de impuestos.</p>
+                        </div>
+                    </div>
+                    <!-- Coche Card -->
+                    <div class="bg-white border border-purple-100 rounded-2xl shadow-sm hover:border-brand-purple/40 transition-all overflow-hidden flex flex-col">
+                        <div class="h-40 bg-purple-50 relative">
+                            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=500&q=80" 
+                                 alt="" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                <i data-lucide="wind" class="w-8 h-8"></i>
+                            </div>
+                        </div>
+                        <div class="p-4 text-left">
+                            <h4 class="font-bold text-brand-textDark text-sm">Isla de Coche</h4>
+                            <p class="text-xs text-gray-500 mt-1">Famosa por sus vientos constantes que atraen a deportistas internacionales de windsurf, sus arenas blancas y aguas mansas.</p>
+                        </div>
+                    </div>
+                    <!-- Cubagua Card -->
+                    <div class="bg-white border border-purple-100 rounded-2xl shadow-sm hover:border-brand-purple/40 transition-all overflow-hidden flex flex-col">
+                        <div class="h-40 bg-purple-50 relative">
+                            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=500&q=80" 
+                                 alt="" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                            <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                <i data-lucide="anchor" class="w-8 h-8"></i>
+                            </div>
+                        </div>
+                        <div class="p-4 text-left">
+                            <h4 class="font-bold text-brand-textDark text-sm">Isla de Cubagua</h4>
+                            <p class="text-xs text-gray-500 mt-1">Suelo donde yacen las ruinas arqueológicas de Nueva Cádiz, primera ciudad fundada por españoles en Suramérica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-bounce">
+                    <a href="#limites" class="p-3 bg-white border border-purple-100 rounded-full inline-block hover:border-brand-purple/40 transition-all shadow-sm">
+                        <i data-lucide="arrow-down" class="w-6 h-6 text-brand-purple"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= LÍMITES GEOGRÁFICOS ================= -->
+        <section id="limites" class="scroll-mt-24 bg-white py-16 px-4 border-t border-purple-100 relative flex flex-col justify-center">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold tracking-widest text-brand-accent uppercase">Parte 1</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mt-2 text-brand-textDark">1. Límites del Estado Nueva Esparta</h2>
+                    <p class="text-gray-500 mt-2 max-w-xl mx-auto">Su condición de archipiélago define límites totalmente marítimos.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    
+                    <!-- Left Column: Exact Intro Text and Map Note from Image 1 -->
+                    <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+                        <div class="bg-brand-light border-2 border-brand-softPurple rounded-3xl p-6 shadow-sm">
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="p-2 bg-brand-softPurple text-brand-purple rounded-xl">
+                                    <i data-lucide="map"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-brand-textDark">Condición Insular</h3>
+                            </div>
+                            <p class="text-gray-700 text-sm md:text-base leading-relaxed text-justify">
+                                Debido a su condición puramente insular (un conjunto de islas), <strong class="text-brand-purple">Nueva Esparta no tiene fronteras terrestres</strong> con ningún otro estado ni país. Sus límites geográficos se definen a través de sus aguas en el Mar Caribe:
+                            </p>
+                        </div>
+
+                        <!-- Exact Note from Image 1 -->
+                        <div class="bg-brand-softPurple/40 border border-purple-200 p-5 rounded-2xl relative overflow-hidden flex items-start space-x-4">
+                            <div class="p-3 bg-white text-brand-accent rounded-xl shadow-sm shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs uppercase font-extrabold text-brand-accent tracking-widest block mb-1">Nota</span>
+                                <p class="text-xs md:text-sm text-gray-700 italic leading-relaxed">
+                                    "Se encuentra ubicado en la región nororiental del país, específicamente al norte de la Península de Araya (estado Sucre)."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Compass & Exact Boundaries -->
+                    <div class="lg:col-span-7 flex flex-col justify-center">
+                        <div class="bg-white border-2 border-purple-100 rounded-3xl p-6 shadow-md relative overflow-hidden">
+                            <!-- Background Grid decoration -->
+                            <div class="absolute inset-0 bg-[radial-gradient(#ddd6fe_1px,transparent_1px)] [background-size:16px_16px] opacity-40"></div>
+
+                            <div class="relative text-center mb-6">
+                                <span class="text-xs uppercase font-bold text-gray-400 tracking-wider">Haz clic en los puntos cardinales de la brújula</span>
+                            </div>
+
+                            <!-- Interactive Compass Grid -->
+                            <div class="grid grid-cols-3 grid-rows-3 gap-2 w-64 h-64 mx-auto relative z-10 mb-6">
+                                <div></div>
+                                <button onclick="selectLimit('norte')" id="btn-norte" class="limit-btn bg-brand-light hover:bg-brand-softPurple/50 border border-purple-200 text-brand-textDark rounded-2xl flex flex-col items-center justify-center p-2 transition-all shadow-sm">
+                                    <span class="text-sm font-extrabold text-brand-accent">N</span>
+                                    <span class="text-[10px] uppercase font-bold text-gray-500">Norte</span>
+                                </button>
+                                <div></div>
+
+                                <button onclick="selectLimit('oeste')" id="btn-oeste" class="limit-btn bg-brand-light hover:bg-brand-softPurple/50 border border-purple-200 text-brand-textDark rounded-2xl flex flex-col items-center justify-center p-2 transition-all shadow-sm">
+                                    <span class="text-sm font-extrabold text-brand-accent">O</span>
+                                    <span class="text-[10px] uppercase font-bold text-gray-500">Oeste</span>
+                                </button>
+                                <div class="bg-brand-softPurple text-brand-purple rounded-full flex items-center justify-center shadow-inner animate-pulse">
+                                    <i data-lucide="compass" class="w-10 h-10"></i>
+                                </div>
+                                <button onclick="selectLimit('este')" id="btn-este" class="limit-btn bg-brand-light hover:bg-brand-softPurple/50 border border-purple-200 text-brand-textDark rounded-2xl flex flex-col items-center justify-center p-2 transition-all shadow-sm">
+                                    <span class="text-sm font-extrabold text-brand-accent">E</span>
+                                    <span class="text-[10px] uppercase font-bold text-gray-500">Este</span>
+                                </button>
+
+                                <div></div>
+                                <button onclick="selectLimit('sur')" id="btn-sur" class="limit-btn bg-brand-light hover:bg-brand-softPurple/50 border border-purple-200 text-brand-textDark rounded-2xl flex flex-col items-center justify-center p-2 transition-all shadow-sm">
+                                    <span class="text-sm font-extrabold text-brand-accent">S</span>
+                                    <span class="text-[10px] uppercase font-bold text-gray-500">Sur</span>
+                                </button>
+                                <div></div>
+                            </div>
+
+                            <!-- Selected Limit exact Display -->
+                            <div class="mt-4 bg-brand-light border-2 border-brand-purple/20 p-4 rounded-2xl text-center min-h-[100px] flex flex-col justify-center transition-all duration-300 shadow-inner">
+                                <span class="text-xs text-brand-purple uppercase font-bold tracking-wider block animate-pulse" id="selectedDirectionTitle">Límite Norte</span>
+                                <p class="text-sm md:text-base text-gray-700 mt-2 font-medium" id="selectedDirectionText">Cargando...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= ATRACTIVOS TURÍSTICOS ================= -->
+        <section id="turismo" class="scroll-mt-24 py-16 px-4 border-t border-purple-100 flex flex-col justify-center bg-brand-light">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold tracking-widest text-brand-accent uppercase">Parte 2</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mt-2 text-brand-textDark">2. Turismo</h2>
+                    <!-- Exact Intro text from Image 1/4 -->
+                    <p class="text-gray-600 mt-3 max-w-4xl mx-auto text-sm md:text-base leading-relaxed text-justify md:text-center">
+                        El turismo es el motor principal de la economía de Nueva Esparta, atrayendo tanto a visitantes nacionales como internacionales por su mezcla de historia, playas idílicas y comercio. Sus principales atractivos se dividen en:
+                    </p>
+                </div>
+
+                <!-- Tourism Filter Tab-strip -->
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button onclick="filterTourism('playa')" id="tour-btn-playa" class="tour-filter-btn px-4 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-brand-purple text-white transition-all flex items-center space-x-2 shadow-sm">
+                        <i data-lucide="umbrella" class="w-4 h-4"></i>
+                        <span>Turismo de Sol y Playa</span>
+                    </button>
+                    <button onclick="filterTourism('eco')" id="tour-btn-eco" class="tour-filter-btn px-4 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-white text-gray-600 border border-purple-100 hover:bg-brand-softPurple/40 transition-all flex items-center space-x-2 shadow-sm">
+                        <i data-lucide="trees" class="w-4 h-4"></i>
+                        <span>Ecológico & Aventura</span>
+                    </button>
+                    <button onclick="filterTourism('historico')" id="tour-btn-historico" class="tour-filter-btn px-4 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-white text-gray-600 border border-purple-100 hover:bg-brand-softPurple/40 transition-all flex items-center space-x-2 shadow-sm">
+                        <i data-lucide="landmark" class="w-4 h-4"></i>
+                        <span>Histórico & Cultural</span>
+                    </button>
+                    <button onclick="filterTourism('religioso')" id="tour-btn-religioso" class="tour-filter-btn px-4 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-white text-gray-600 border border-purple-100 hover:bg-brand-softPurple/40 transition-all flex items-center space-x-2 shadow-sm">
+                        <i data-lucide="church" class="w-4 h-4"></i>
+                        <span>Religioso</span>
+                    </button>
+                    <button onclick="filterTourism('compras')" id="tour-btn-compras" class="tour-filter-btn px-4 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-white text-gray-600 border border-purple-100 hover:bg-brand-softPurple/40 transition-all flex items-center space-x-2 shadow-sm">
+                        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        <span>Compras</span>
+                    </button>
+                </div>
+
+                <!-- Display Box for Tourism Content -->
+                <div id="tourismContentBox" class="bg-white border border-purple-100 rounded-3xl p-6 md:p-10 shadow-lg relative overflow-hidden transition-all duration-300 min-h-[380px] flex flex-col justify-between">
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <!-- Main Text of Selected Category -->
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="text-xs font-bold text-brand-purple tracking-widest uppercase block">Categoría de Atractivo</span>
+                            <h3 id="tour-title" class="text-2xl md:text-4xl font-serif font-bold text-brand-textDark">Cargando...</h3>
+                            
+                            <!-- Full Text from Image 4 -->
+                            <p id="tour-desc" class="text-gray-700 text-sm md:text-base leading-relaxed text-justify">
+                                Cargando...
+                            </p>
+                        </div>
+
+                        <!-- Side Card with Descriptive Image -->
+                        <div class="lg:col-span-5 flex flex-col items-center">
+                            <div class="w-full max-w-sm bg-brand-light border border-purple-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+                                <div class="h-48 w-full bg-purple-50 relative">
+                                    <img id="tour-image" 
+                                         src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" 
+                                         alt="" 
+                                         class="w-full h-full object-cover transition-opacity duration-300"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                    <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                        <i id="tour-fallback-icon" data-lucide="umbrella" class="w-12 h-12"></i>
+                                    </div>
+                                </div>
+                                <div class="p-5 flex flex-col justify-between">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <div class="p-2 bg-white text-brand-purple rounded-lg shadow-sm">
+                                            <i id="tour-small-icon" data-lucide="umbrella" class="w-5 h-5"></i>
+                                        </div>
+                                        <span class="text-xs text-brand-accent font-bold uppercase tracking-wider">Atractivo Clave</span>
+                                    </div>
+                                    <span class="text-lg font-bold text-brand-textDark block" id="tour-card-title">Cargando...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= GASTRONOMÍA ================= -->
+        <section id="gastronomia" class="scroll-mt-24 bg-white py-16 px-4 border-t border-purple-100 flex flex-col justify-center">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-bold tracking-widest text-brand-accent uppercase">Parte 3</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mt-2 text-brand-textDark">3. Gastronomía</h2>
+                    
+                    <!-- Exact Text from Image 3 -->
+                    <p class="text-gray-700 mt-4 max-w-4xl mx-auto text-sm md:text-base leading-relaxed text-justify md:text-center">
+                        La cocina neoespartana (o margariteña) es una de las más ricas y con mayor identidad de Venezuela. Su base fundamental son los productos marinos combinados con el ingrediente estrella de la región: el <strong class="text-brand-accent font-semibold">ají dulce margariteño</strong> (un ají único por su aroma y sabor intenso pero sin picor).
+                    </p>
+                </div>
+
+                <!-- Star Ingredient Card with Image -->
+                <div class="bg-gradient-to-r from-brand-softPurple/30 via-white to-brand-softPurple/30 border border-brand-purple/20 rounded-3xl p-6 mb-12 max-w-4xl mx-auto shadow-sm grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                    <div class="md:col-span-3 h-32 bg-purple-50 rounded-2xl overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=300&q=80" 
+                             alt="" 
+                             class="w-full h-full object-cover"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                            <i data-lucide="sparkles" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div class="md:col-span-9">
+                        <span class="text-xs text-brand-accent font-bold tracking-wider uppercase block mb-1">Ingrediente Símbolo</span>
+                        <h4 class="text-lg font-bold text-brand-textDark">El Ají Dulce Margariteño</h4>
+                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed mt-1">
+                            El pilar de cada receta neoespartana. Aporta un olor profundo, dulce, tropical e intensamente aromático que define el sabor inimitable de la cocina regional.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tab Selectors -->
+                <div class="flex justify-center space-x-2 mb-8">
+                    <button onclick="switchGastroTab('platos')" id="gastro-tab-platos" class="px-5 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-brand-purple text-white transition-all flex items-center space-x-2 shadow-md">
+                        <i data-lucide="soup" class="w-4 h-4"></i>
+                        <span>Platos Emblemáticos</span>
+                    </button>
+                    <button onclick="switchGastroTab('dulces')" id="gastro-tab-dulces" class="px-5 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-white text-gray-600 border border-purple-100 hover:bg-brand-softPurple/40 transition-all flex items-center space-x-2 shadow-sm">
+                        <i data-lucide="candy" class="w-4 h-4"></i>
+                        <span>Dulcería y Bebidas</span>
+                    </button>
+                </div>
+
+                <!-- Platos Panel (Literal Text from Image 3) -->
+                <div id="gastro-panel-platos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto transition-all duration-300">
+                    
+                    <!-- Pastel de Chucho -->
+                    <div class="bg-white border border-purple-100 hover:border-brand-purple/50 p-6 rounded-3xl flex flex-col justify-between transition-all group hover:-translate-y-1 shadow-sm hover:shadow-md overflow-hidden">
+                        <div>
+                            <div class="h-40 bg-purple-50 rounded-2xl overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=400&q=80" 
+                                     alt="" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                    <i data-lucide="flame" class="w-8 h-8"></i>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="px-2.5 py-1 bg-brand-softPurple text-brand-purple rounded-lg font-bold text-xs">PLATO BANDERA</span>
+                                <i data-lucide="flame" class="text-brand-accent w-5 h-5"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-brand-textDark group-hover:text-brand-purple transition-colors">Pastel de Chucho</h5>
+                            <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed text-justify italic">
+                                "El plato bandera de la isla. Es una especie de lasaña o pastelón que equilibra perfectamente lo dulce y lo salado; se prepara intercalando capas de guiso de chucho (un tipo de raya marina) sazonado con ají dulce, plátano maduro frito (tajadas), queso y en ocasiones salsa bechamel."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pabellón Margariteño -->
+                    <div class="bg-white border border-purple-100 hover:border-brand-purple/50 p-6 rounded-3xl flex flex-col justify-between transition-all group hover:-translate-y-1 shadow-sm hover:shadow-md overflow-hidden">
+                        <div>
+                            <div class="h-40 bg-purple-50 rounded-2xl overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=400&q=80" 
+                                     alt="" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                    <i data-lucide="fish" class="w-8 h-8"></i>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="px-2.5 py-1 bg-brand-softPurple text-brand-purple rounded-lg font-bold text-xs">VARIANTE REGIONAL</span>
+                                <i data-lucide="fish" class="text-brand-purple w-5 h-5"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-brand-textDark group-hover:text-brand-purple transition-colors">Pabellón Margariteño</h5>
+                            <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed text-justify italic">
+                                "Una variante regional del plato nacional venezolano. En lugar de carne mechada, se utiliza cazón (un tiburón pequeño) desmechado y guisado con aliños locales."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Empanadas -->
+                    <div class="bg-white border border-purple-100 hover:border-brand-purple/50 p-6 rounded-3xl flex flex-col justify-between transition-all group hover:-translate-y-1 shadow-sm hover:shadow-md overflow-hidden">
+                        <div>
+                            <div class="h-40 bg-purple-50 rounded-2xl overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=400&q=80" 
+                                     alt="" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                    <i data-lucide="star" class="w-8 h-8"></i>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="px-2.5 py-1 bg-brand-softPurple text-brand-purple rounded-lg font-bold text-xs">DESAYUNO CLÁSICO</span>
+                                <i data-lucide="star" class="text-yellow-500 w-5 h-5"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-brand-textDark group-hover:text-brand-purple transition-colors">Empanadas de Cazón y Mariscos</h5>
+                            <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed text-justify italic">
+                                "El desayuno tradicional por excelencia. Son empanadas de masa de maíz fritas y crujientes, rellenas de guisos de cazón, camarones, calamares o pepitonas, usualmente compradas en los populares puestos de las playas o mercados."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- La Fosforera -->
+                    <div class="bg-white border border-purple-100 hover:border-brand-purple/50 p-6 rounded-3xl flex flex-col justify-between transition-all group hover:-translate-y-1 shadow-sm hover:shadow-md overflow-hidden">
+                        <div>
+                            <div class="h-40 bg-purple-50 rounded-2xl overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=400&q=80" 
+                                     alt="" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                    <i data-lucide="waves" class="w-8 h-8"></i>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="px-2.5 py-1 bg-brand-softPurple text-brand-purple rounded-lg font-bold text-xs">CALDO REPARADOR</span>
+                                <i data-lucide="waves" class="text-brand-accent w-5 h-5"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-brand-textDark group-hover:text-brand-purple transition-colors">La Fosforera</h5>
+                            <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed text-justify italic">
+                                "Un asopado o caldo concentrado de mariscos (camarones, calamares, almejas, mejillones) cargado de vegetales y ají dulce, conocido popularmente por sus propiedades energéticas y 'afrodisíacas'."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Consomé -->
+                    <div class="bg-white border border-purple-100 hover:border-brand-purple/50 p-6 rounded-3xl flex flex-col justify-between transition-all group hover:-translate-y-1 lg:col-span-2 max-w-2xl mx-auto w-full shadow-sm hover:shadow-md overflow-hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-5 h-40 md:h-full min-h-[140px] bg-purple-50 rounded-2xl overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=400&q=80" 
+                                     alt="[Image of Mariscos]" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                    <i data-lucide="droplet" class="w-8 h-8"></i>
+                                </div>
+                            </div>
+                            <div class="md:col-span-7 p-2 text-left">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="px-2.5 py-1 bg-brand-softPurple text-brand-purple rounded-lg font-bold text-xs">MARISCOS FRESCOS</span>
+                                    <i data-lucide="droplet" class="text-blue-500 w-5 h-5"></i>
+                                </div>
+                                <h5 class="text-lg font-bold text-brand-textDark group-hover:text-brand-purple transition-colors">Consomé de Chipichipi o Guacuco</h5>
+                                <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed text-justify italic">
+                                    "Sopas claras concentradas a base de estos pequeños moluscos recolectados en las orillas de las playas."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Dulces & Bebidas Panel (Literal Text from Image 2) -->
+                <div id="gastro-panel-dulces" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto transition-all duration-300 hidden">
+                    
+                    <!-- Piñonate -->
+                    <div class="bg-white border border-purple-100 hover:border-brand-purple/50 p-6 rounded-3xl flex flex-col justify-between transition-all group hover:-translate-y-1 shadow-sm hover:shadow-md overflow-hidden">
+                        <div>
+                            <div class="h-40 bg-purple-50 rounded-2xl overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" 
+                                     alt="" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                    <i data-lucide="candy" class="w-8 h-8"></i>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="px-2.5 py-1 bg-brand-softPurple text-brand-purple rounded-lg font-bold text-xs">DULCERÍA</span>
+                                <i data-lucide="candy" class="text-pink-500 w-5 h-5"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-brand-textDark group-hover:text-brand-purple transition-colors">Piñonate</h5>
+                            <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed text-justify italic">
+                                "Un dulce tradicional elaborado a base de lechosa (papaya) verde, melao de papelón y concha de naranja cajera, típico de la población de San Juan Bautista."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Cocada -->
+                    <div class="bg-white border border-purple-100 hover:border-brand-purple/50 p-6 rounded-3xl flex flex-col justify-between transition-all group hover:-translate-y-1 shadow-sm hover:shadow-md overflow-hidden">
+                        <div>
+                            <div class="h-40 bg-purple-50 rounded-2xl overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=400&q=80" 
+                                     alt="" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                    <i data-lucide="glass-water" class="w-8 h-8"></i>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="px-2.5 py-1 bg-brand-softPurple text-brand-purple rounded-lg font-bold text-xs">BEBIDA REFRESCANTE</span>
+                                <i data-lucide="glass-water" class="text-brand-purple w-5 h-5"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-brand-textDark group-hover:text-brand-purple transition-colors">Cocada</h5>
+                            <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed text-justify italic">
+                                "Bebida refrescante, espesa y cremosa que se prepara licuando la pulpa del coco tierno con su propia agua, hielo y azúcar (a menudo con un toque de leche condensada)."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Dulces en Almíbar -->
+                    <div class="bg-white border border-purple-100 hover:border-brand-purple/50 p-6 rounded-3xl flex flex-col justify-between transition-all group hover:-translate-y-1 shadow-sm hover:shadow-md overflow-hidden">
+                        <div>
+                            <div class="h-40 bg-purple-50 rounded-2xl overflow-hidden relative mb-4">
+                                <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=400&q=80" 
+                                     alt="" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                <div class="hidden absolute inset-0 bg-brand-softPurple items-center justify-center text-brand-purple">
+                                    <i data-lucide="apple" class="w-8 h-8"></i>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="px-2.5 py-1 bg-brand-softPurple text-brand-purple rounded-lg font-bold text-xs">CONSERVAS CRIOLLAS</span>
+                                <i data-lucide="apple" class="text-red-500 w-5 h-5"></i>
+                            </div>
+                            <h5 class="text-lg font-bold text-brand-textDark group-hover:text-brand-purple transition-colors">Dulces en almíbar</h5>
+                            <p class="text-xs md:text-sm text-gray-600 mt-2 leading-relaxed text-justify italic">
+                                "Destacan los dulces de lechosa, de dátil o las conservas de coco."
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 bg-white border-t border-purple-100 py-10 text-center text-xs text-gray-500">
+        <p class="font-bold text-brand-textDark mb-1">Nueva Esparta - Exposición Escolar de Geografía, Turismo y Gastronomía</p>
+        <p>© 2026. Todos los derechos del material textual corresponden a los recursos estudiados en clase.</p>
+    </footer>
+
+
+    <script>
+        // Inicializar los iconos de Lucide
+        lucide.createIcons();
+
+        // ----------------- CONTROL DE MENÚ ACTIVO SEGÚN EL SCROLL -----------------
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        function updateActiveNav() {
+            let currentActiveId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120; // Compensación del header fijo
+                if (window.scrollY >= sectionTop) {
+                    currentActiveId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href') === `#${currentActiveId}`) {
+                    link.classList.add('nav-active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('load', updateActiveNav);
+
+
+        // ----------------- LIMITS COMPASS DATA (Exact text from image 1) -----------------
+        const limitsData = {
+            norte: "Al Norte: Mar Caribe.",
+            sur: "Al Sur: Mar Caribe (lo separa de las costas continentales de los estados Sucre y Anzoátegui).",
+            este: "Al Este: Mar Caribe.",
+            oeste: "Al Oeste: Mar Caribe."
+        };
+
+        function selectLimit(direction) {
+            document.querySelectorAll('.limit-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-softPurple/70', 'border-brand-purple', 'shadow-inner');
+            });
+            document.getElementById(`btn-${direction}`).classList.add('bg-brand-softPurple/70', 'border-brand-purple', 'shadow-inner');
+            
+            const titleEl = document.getElementById('selectedDirectionTitle');
+            const textEl = document.getElementById('selectedDirectionText');
+            
+            titleEl.textContent = `Límite al ${direction.toUpperCase()}`;
+            textEl.textContent = limitsData[direction];
+            
+            titleEl.classList.add('animate-pulse');
+            setTimeout(() => titleEl.classList.remove('animate-pulse'), 400);
+        }
+
+        // Initialize Limits select Norte
+        selectLimit('norte');
+
+
+        // ----------------- TOURISM SECTION DATA (Exact texts from image 1/4 with realistic photos) -----------------
+        const tourismData = {
+            playa: {
+                title: "Turismo de Sol y Playa",
+                desc: "Posee algunas de las playas más famosas del Caribe. Playa El Agua y Playa Parguito (ideales para el surf), Playa El Yaque (reconocida mundialmente para la práctica de windsurf y kitesurf) y las paradisíacas playas de arena blanca y aguas tranquilas de la Isla de Coche.",
+                icon: "umbrella",
+                cardTitle: "Playa El Yaque & Coche",
+                image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+            },
+            eco: {
+                title: "Turismo Ecológico y de Aventura",
+                desc: "El Parque Nacional Laguna de La Restinga, donde se realizan paseos en botes a través de canales de manglares, y el Monumento Natural Cerro El Copey, que ofrece un clima fresco de montaña en medio del Caribe.",
+                icon: "trees",
+                cardTitle: "Laguna de La Restinga",
+                image: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80"
+            },
+            historico: {
+                title: "Turismo Histórico y Cultural",
+                desc: "Castillos de la época colonial que protegen memorias de piratas y batallas de independencia, como el Castillo San Carlos de Borromeo (en Pampatar) y el Castillo de Santa Rosa (en La Asunción, la capital del estado).",
+                icon: "landmark",
+                cardTitle: "Castillo de Pampatar",
+                image: "https://images.unsplash.com/photo-1599818805211-177265a8df2d?auto=format&fit=crop&w=600&q=80"
+            },
+            religioso: {
+                title: "Turismo Religioso",
+                desc: "El santuario de la Virgen del Valle, patrona del oriente venezolano, ubicado en el Valle del Espíritu Santo, el cual recibe miles de peregrinos todo el año (especialmente en septiembre).",
+                icon: "church",
+                cardTitle: "Santuario Virgen del Valle",
+                image: "https://images.unsplash.com/photo-1548625361-155deee26291?auto=format&fit=crop&w=600&q=80"
+            },
+            compras: {
+                title: "Turismo de Compras",
+                desc: "Gracias a su régimen de Puerto Libre, ciudades como Porlamar disfrutan de avenidas y centros comerciales orientados a la compra de productos importados libres de ciertos impuestos.",
+                icon: "shopping-bag",
+                cardTitle: "Puerto Libre Porlamar",
+                image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80"
+            }
+        };
+
+        function filterTourism(category) {
+            document.querySelectorAll('.tour-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-purple', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-600', 'border-purple-100');
+            });
+            const activeBtn = document.getElementById(`tour-btn-${category}`);
+            activeBtn.classList.remove('bg-white', 'text-gray-600', 'border-purple-100');
+            activeBtn.classList.add('bg-brand-purple', 'text-white');
+
+            const data = tourismData[category];
+            const box = document.getElementById('tourismContentBox');
+            box.classList.add('opacity-40');
+            
+            setTimeout(() => {
+                document.getElementById('tour-title').textContent = data.title;
+                document.getElementById('tour-desc').textContent = data.desc;
+                document.getElementById('tour-card-title').textContent = data.cardTitle;
+                
+                // Update image URL and fallback icon
+                const imgEl = document.getElementById('tour-image');
+                imgEl.src = data.image;
+                imgEl.style.display = 'block';
+                imgEl.nextElementSibling.style.display = 'none';
+
+                const fallbackIcon = document.getElementById('tour-fallback-icon');
+                fallbackIcon.setAttribute('data-lucide', data.icon);
+
+                const smallIcon = document.getElementById('tour-small-icon');
+                smallIcon.setAttribute('data-lucide', data.icon);
+
+                lucide.createIcons();
+                box.classList.remove('opacity-40');
+            }, 180);
+        }
+
+        // Initialize Tourism Section with 'playa'
+        filterTourism('playa');
+
+
+        // ----------------- GASTRONOMY TABS -----------------
+        function switchGastroTab(tab) {
+            const btnPlatos = document.getElementById('gastro-tab-platos');
+            const btnDulces = document.getElementById('gastro-tab-dulces');
+            const panelPlatos = document.getElementById('gastro-panel-platos');
+            const panelDulces = document.getElementById('gastro-panel-dulces');
+
+            if (tab === 'platos') {
+                btnPlatos.className = "px-5 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-brand-purple text-white transition-all flex items-center space-x-2 shadow-md";
+                btnDulces.className = "px-5 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-white text-gray-600 border border-purple-100 hover:bg-brand-softPurple/40 transition-all flex items-center space-x-2 shadow-sm";
+                panelPlatos.classList.remove('hidden');
+                panelDulces.classList.add('hidden');
+            } else {
+                btnDulces.className = "px-5 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-brand-purple text-white transition-all flex items-center space-x-2 shadow-md";
+                btnPlatos.className = "px-5 py-2.5 text-xs md:text-sm font-bold rounded-xl bg-white text-gray-600 border border-purple-100 hover:bg-brand-softPurple/40 transition-all flex items-center space-x-2 shadow-sm";
+                panelDulces.classList.remove('hidden');
+                panelPlatos.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
